@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashtria Pretto's Book</title>    
+    <style>
+        body {
+	font-family: "Inter",sans-serif !important;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+  color: #1e3a5f;
+            margin: 0;
+            padding: 0;
+            background-color: #8ed1fc;
+        }
+        header {
+            background-color: #1e3a5f;
+	font-family: "Inter","Lato", sans-serif !important;
+  color: #0a2a4a;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+	h1 {
+font-family: "Lato", sans-serif !important;
+font-weight: 400 !important;
+  font-size: 32px;
+  letter-spacing: 0.48px;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+font-feature-settings: "kern", "liga";
+}
+
+h2 {
+font-family: "Lato", sans-serif !important;
+font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 0.45px;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+font-feature-settings: "kern", "liga";
+}
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #8ed1fc;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #1e3a5f;
+            text-decoration: none;
+            padding: 5px 30px;
+            cursor: pointer;
+	    font-style: normal;
+            font-weight: 700;
+        }
+        nav a:hover {
+            background: #3a7bab;
+        }
+        .container {
+            max-width: 90%;
+            margin: 25px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #1e3a5f;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .book-image {
+            display: block;
+            max-width: 100%; #100%
+            height: auto; #auto
+            margin: 20px 20px;
+            border-radius: 8px;
+        }
+	.text-aligner {
+	    width: 100%;	    
+	}
+	.image-aligner {	 
+	     display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;   
+	}
+	.heading-container {	
+	    grid-column: 2;
+  white-space: nowrap;
+  text-align: center;
+	}
+	.image-container {
+	     grid-column: 3;
+	justify-self: end;
+	width: 200px; 
+	margin: 10px;
+        }
+        .image-container img {
+            width: 100px; #50px
+            height: 100px; #50px
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+	    justify-content: right;
+        }
+        .image-container img:hover {
+            width: 100%;
+            height: auto;
+        }
+	.scrolling-banner {
+            width: 100%;
+	    height: 45px;
+            background-color: #f8b400; /* Change as needed */
+            color: #fff; /* Text color */
+            font-size: 20px;
+            font-weight: bold;
+	    overflow: hidden;
+            white-space: nowrap;
+	    text-align: center;	    
+            align-items: center;
+	    display: grid;
+	    grid-template-columns: 1fr auto;
+        }
+
+        .scrolling-banner p {
+            grid-column: 2;
+	    justify-content: center;
+	    text-align: center;
+            padding-left: 100%;
+            animation: scrollBanner 40s linear infinite;
+        }
+
+        @keyframes scrollBanner {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+    <script>
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</head>
+<body onload="return show('home');">
+    <header>
+	<div class="image-aligner">
+        		<div class="heading-container"><h1>Welcome to Shashtria Pretto’s Inspirational Journey</h1></div>
+			<div class="image-container">								
+                		<img src="Book_cover_design_icon.jpg" alt="Book Icon" onmouseover="this.src='Book_cover_design.jpg'" onmouseout="this.src='Book_cover_design_icon.jpg'">				
+            		</div>
+	</div>
+	<div>
+		
+	</div>
+    </header>
+    <nav>
+        <a onclick="showContent('home')">Home</a>        
+        <a onclick="showContent('books')">About Book</a>
+	<a onclick="showContent('about')">About Author</a>
+        <a onclick="showContent('contact')">Contact</a>
+    </nav>
+	<div class="scrolling-banner">
+		<p>Her book soared to success, earning the prestigious 'Fast Selling' tag at the grand Delhi World Book Fair 2025</p>
+	</div>
+    <div class="container">
+    	<div class="content active" id="home">
+        	<h2>Embrace the Power of Words</h2>
+        	<p>Step into a world where inspiration meets transformation. Through the pages of this book, Shashtria Pretto invites you to rediscover hope, ignite your passions, and unlock the strength within.</p>
+        	<p>Let this journey be the spark that fuels your dreams and empowers your soul.</p>
+		<img src="Book_cover.jpg" alt="Shashtria Pretto's Book Cover" class="book-image">
+		<!-- <div class="image-aligner">
+			<div class="image-container">
+                		<img src="Book_cover_icon.jpg" alt="Book Icon" onmouseover="this.src='Book_cover.jpg'" onmouseout="this.src='Book_cover_icon.jpg'">
+            		</div>
+		</div>  -->
+    	</div>
+	
+	<div class="content" id="books">		
+		<div class="text-aligner">
+			<h2>My Experience With The Ultimate Truth About Kundalini</h2>
+			<p><strong>A Divine Journey of Awakening, Miracles & Spiritual Revelation:</strong></p>
+			<p><em>"My Experiences With The Ultimate Truth About Kundalini"</em>is not just a book—it is a sacred testament to the profound spiritual journey of Shashtria Pretto (Sruthi). Guided by divine forces, celestial encounters, and the blessings of her Guru, Sruthi shares her extraordinary experiences of Kundalini awakenings, miraculous healings, astral travels, and divine interactions with deities and enlightened masters.</p>
+			<p>From the depths of personal trials to the heights of mystical revelations, this book unveils the hidden dimensions of spiritual existence, offering readers a beacon of hope, wisdom, and enlightenment. It is an invitation to those seeking truth, transformation, and a deeper connection with the Divine.</p>
+			<p>Filled with profound insights and real-life miracles, this book will inspire you to embrace your own spiritual path, trust in the unseen forces of the universe, and awaken the divine power within.</p> 
+		<p>Are you ready to embark on a journey beyond the ordinary?</p>
+		<p>To buy from Flipkart, click <a href="https://dl.flipkart.com/s/ThaguluuuN">https://dl.flipkart.com/s/ThaguluuuN</a><br>
+		To buy from Notion Press, click <a href="https://notionpress.com/read/my-experience-with-the-ultimate-truth-about-kundalini">https://notionpress.com/read/my-experience-with-the-ultimate-truth-about-kundalini</a><br>
+		To buy from Amazon, click <a href="https://amzn.in/d/1jO9kCy">https://amzn.in/d/1jO9kCy</a><br> <br>Hover over the images for a stunning full view. <b>Her book soared to success, earning the prestigious 'Fast Selling' tag at the grand Delhi World Book Fair 2025</b><br>(Held from February 1st to 9th at the Notion Press Stall in Pragati Maidan.)</p>
+
+		</div>
+		<div>			
+			<div class="image-container">
+				<img src="Book_Badge.jpg" alt="Book Icon" onmouseover="this.src='Book_Badge.jpg'" onmouseout="this.src='Book_Badge.jpg'">
+				<img src="Book_WBF.jpg" alt="Book Icon" onmouseover="this.src='Book_WBF.jpg'" onmouseout="this.src='Book_WBF.jpg'">
+				<img src="Book_Stall.jpg" alt="Book Icon" onmouseover="this.src='Book_Stall.jpg'" onmouseout="this.src='Book_Stall.jpg'">
+				<img src="Book_at_stall_icon.jpg" alt="Book At Stall Icon" onmouseover="this.src='Book_at_stall.jpg'" onmouseout="this.src='Book_at_stall_icon.jpg'">            		
+				<img src="Book_fast_sell_icon.jpg" alt="Book Icon" onmouseover="this.src='Book_fast_sell.jpg'" onmouseout="this.src='Book_fast_sell_icon.jpg'">
+				<!-- <img src="Book_Front_Cover.jpg" alt="Book Icon" onmouseover="this.src='Book_Front_Cover.jpg'" onmouseout="this.src='Book_Front_Cover.jpg'">
+				<img src="Book_Back_Cover.jpg" alt="Book Icon" onmouseover="this.src='Book_Back_Cover.jpg'" onmouseout="this.src='Book_Back_Cover.jpg'"> -->
+				
+            		</div>
+		</div>
+    	</div>
+	<div class="content" id="about">
+    		<h2> Shashtria Pretto: A Beacon of Spiritual Light and Transformation </h2>
+		<p>Shashtria Pretto, also known as Sruthi, is a luminous soul whose life embodies the essence of divine grace, unwavering faith, and profound spiritual wisdom. Born in 1974 and brought up in Mumbai, she has walked an extraordinary path shaped by celestial encounters, mystical experiences, and an unshakable connection with the Divine.</p>
+		<p>Her journey is not just one of self-discovery but also of guiding others toward healing, hope, and enlightenment. With deep humility and devotion, she has been blessed with visions of deities, saints, and celestial beings, experiences that have strengthened her resolve to spread divine wisdom and inspire others to embrace their own spiritual awakening.</p>
+		<p>A gifted healer and spiritual guide, Sruthi’s ability to channel divine energies has touched the lives of many, offering solace and transformation beyond the material realm. Her book, My Experience With The Ultimate Truth About Kundalini, is a sacred testament to her journey, offering readers a glimpse into the boundless miracles and profound truths she has witnessed.</p>
+		<p>As the chosen disciple of her Guru, who bestowed upon her the name Sruthi—meaning revelation—she continues to illuminate the world with her teachings, her humility, and her deep-seated belief in the perfection of life’s design. Through her life and writings, she serves as an unwavering beacon, guiding seekers toward their highest truth.</p>
+	</div>
+    	<div class="content" id="contact">
+    		<h2>Reach Out to me at:</h2>
+        	<p>shashtriapretto21@gmail.com</p>
+    	</div>
+    </div>
+    <footer>
+        &copy; 2025 Shashtria Pretto. All Rights Reserved. Publisher's logo is the property of its respective owner.
+    </footer>
+</body>
+</html>
